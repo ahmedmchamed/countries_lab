@@ -11,7 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         mounted() {
-            console.log('mounted has...mounted?')
+            fetch("https://restcountries.eu/rest/v2/all")
+            .then(response => response.json())
+            .then(data => this.countries = data);
         },
         computed: {
 
