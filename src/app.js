@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 { name: "Country4", population: 1200 }
             ]
         },
+        mounted() {
+            console.log('mounted has...mounted?')
+        },
         computed: {
 
         },
