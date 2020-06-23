@@ -4,13 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
         el: '#app',
         data: {
             countries: [],
-            selectedCountryName: ""
+            selectedCountryName: "",
+            favouriteCountries: []
         },
         mounted() {
             fetch("https://restcountries.eu/rest/v2/all")
-            .then(response => response.json())
-            .then(data => this.countries = data)
-            .then(list => list.sort(function (a,b) { return a.population - b.population; }))
+                .then(response => response.json())
+                .then(data => this.countries = data)
+                .then(list => list.sort(function (a, b) { return a.population - b.population; }))
         },
         computed: {
             totalPopulation: function () {
@@ -18,15 +19,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     return runningTotal + country.population;
                 }, 0)
             },
-            selectedCountry: function(){
-              return this.countries.find((country) => {
-                return country.name === this.selectedCountryName;
-              })
+            selectedCountry: function () {
+                return this.countries.find((country) => {
+                    return country.name === this.selectedCountryName;
+                })
             }
         },
         methods: {
             countrySelected: function (event) {
                 this.selectedCountryName = event.target.value
+            },
+            favouriteCountry: function () {
+                if (event.target.checked) {
+                    console.log(this.selectedCountry.name)
+                }
             }
         }
     });
