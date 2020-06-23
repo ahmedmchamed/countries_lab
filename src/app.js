@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
         el: '#app',
         data: {
             countries: [],
-            countryInfo: null
+            selectedCountryName: ""
         },
         mounted() {
             fetch("https://restcountries.eu/rest/v2/all")
@@ -18,12 +18,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     return runningTotal + country.population;
                 }, 0)
             },
-            filteredCountrys: functio
-
+            selectedCountry: function(){
+              return this.countries.find((country) => {
+                return country.name === this.selectedCountryName;
+              })
+            }
         },
         methods: {
             countrySelected: function (event) {
-                this.countryInfo = event.target.value
+                this.selectedCountryName = event.target.value
             }
         }
     });
