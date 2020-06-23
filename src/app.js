@@ -31,7 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             favouriteCountry: function () {
                 if (event.target.checked) {
-                    console.log(this.selectedCountry.name)
+                    // console.log(this.selectedCountry.name)
+                    this.favouriteCountries.push(this.selectedCountry)
                 }
             }
         }

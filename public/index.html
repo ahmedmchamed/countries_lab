@@ -23,7 +23,7 @@
             The country is {{ selectedCountry.name }} (<i>{{ selectedCountry.nativeName }}</i>) which has a population
             of {{ selectedCountry.population }}.
             <br>
-            <input type="checkbox" v-on:change="favouriteCountry">
+            <input id='checkbox' type="checkbox" v-on:change="favouriteCountry" :checked="">
             <img :src="selectedCountry.flag">
         </div>
 
