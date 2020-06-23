@@ -3,3 +3,7 @@ header {
   padding: 10px 20px;
   color: #333;
 }
+
+img {
+  max-height: 100px;
+}

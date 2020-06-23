@@ -16,8 +16,9 @@
             <option v-for="country in countries" :value="country.name">{{ country.name }} has a population of
                 {{ country.population }}</option>
         </select>
-        <div v-if="selectedCountry !== null">
-            {{ selectedCountry.name }}
+        <div v-if="selectedCountry !== undefined">
+            The country is {{ selectedCountry.name }} (<i>{{ selectedCountry.nativeName }}</i>) which has a population of {{ selectedCountry.population }}.
+            <img :src="selectedCountry.flag">
         </div>
     </div>
 </body>
