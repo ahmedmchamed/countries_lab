@@ -12,7 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => this.countries = data);
         },
         computed: {
-
+            totalPopulation: function () {
+                return this.countries.reduce((runningTotal, country) => {
+                    return runningTotal + country.population;
+                }, 0)
+            }
         },
         methods: {
 

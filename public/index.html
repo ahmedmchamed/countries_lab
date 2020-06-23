@@ -12,8 +12,9 @@
     <div id="app">
         <h1>Country Populations</h1>
         <ul>
-            <li v-for="country in countries">{{ country.name }}</li>
+            <li v-for="country in countries">{{ country.name }} has a population of {{ country.population }}</li>
         </ul>
+        <p>That makes up a total population of {{ totalPopulation }} globally.</p>
     </div>
 </body>
 
