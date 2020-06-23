@@ -11,10 +11,11 @@
 <body>
     <div id="app">
         <h1>Country Populations</h1>
-        <ul>
-            <li v-for="country in countries">{{ country.name }} has a population of {{ country.population }}</li>
-        </ul>
-        <p>That makes up a total population of {{ totalPopulation }} globally.</p>
+        <p>The total population of all countries is {{ totalPopulation }} globally.</p>
+        <select v-on:change="countrySelected($event)">
+            <option v-for="country in countries" :value="country.name">{{ country.name }} has a population of {{ country.population }}</option>
+        </select>
+        <p>The country is {{ countryInfo }}</p>
     </div>
 </body>
 
